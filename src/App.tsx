@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from "antd";
+import { Sidebar } from "./components/Sidebar";
+import { SidebarLoading } from "./components/SidebarLoading";
+import { Skeleton } from "./components/Skeleton";
+import { useHeader } from "./contexts/HeaderContext";
+import { useSidebar } from "./contexts/SidebarContext";
 
-function App() {
+const { Header } = Layout;
+
+export const App = () => {
+  const header = useHeader();
+  const sidebar = useSidebar();
+
+  if (!header) return <Skeleton />;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Header style={{ color: "#f5f5f5" }}>{header.title}</Header>
+      <Layout>
+        {sidebar ? <Sidebar data={sidebar} /> : <SidebarLoading />}
+      </Layout>
+    </Layout>
   );
-}
-
-export default App;
+};

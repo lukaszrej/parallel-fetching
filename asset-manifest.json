@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/parallel-fetching/static/css/main.dd1ea7b7.css",
+    "main.js": "/parallel-fetching/static/js/main.935415ad.js",
+    "index.html": "/parallel-fetching/index.html",
+    "main.dd1ea7b7.css.map": "/parallel-fetching/static/css/main.dd1ea7b7.css.map",
+    "main.935415ad.js.map": "/parallel-fetching/static/js/main.935415ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd1ea7b7.css",
+    "static/js/main.935415ad.js"
+  ]
+}
